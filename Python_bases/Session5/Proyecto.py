@@ -25,7 +25,19 @@ def hide_word(word_list):
 
 # Method to input a valid letter by the user (Play in lower cases, if it's in upper use the method lower())
 def input_letter():
-    return input("Guess the letter: ").lower()
+    chosen_letter = ''
+    is_valid = False
+    abc = 'abcdefghijklmnñopqrstuvwxyz'
+
+    while not is_valid:
+        chosen_letter = input("Guess the letter: ")
+
+        if chosen_letter in abc and len(chosen_letter) == 1:
+            is_valid = True
+        else:
+            print("You didn't choose a valid letter")
+
+    return chosen_letter.lower()
 
 
 # Method to show the right letter in the hidden word
